@@ -130,6 +130,7 @@ const walidateForm = e => {
     
 	if (genders.some(gender => gender.checked)) {
 		genders.forEach(gender => gender.nextElementSibling.classList.remove('activeP'))
+		errors = 0
 	} else {
 		genders.forEach(gender => gender.nextElementSibling.classList.add('activeP'))
 		errors++
@@ -142,6 +143,7 @@ const walidateForm = e => {
 
 	if (yesNo.some(answer => answer.checked)) {
 		yesNo.forEach(answer => answer.nextElementSibling.classList.remove('activeP'))
+		errors = 0
 	} else {
 		yesNo.forEach(answer => answer.nextElementSibling.classList.add('activeP'))
 		errors++
@@ -153,6 +155,7 @@ const walidateForm = e => {
 			errors++
 		} else {
 			input.classList.remove('active')
+			errors = 0
 		}
 	})
 
@@ -164,6 +167,7 @@ const walidateForm = e => {
         checkBtn.innerHTML = 'Reset'
 		checkBtn.classList.add('activeB')
 	} 
+	console.log(errors)
 
 	
 
@@ -183,7 +187,7 @@ const showError = () => {
 		errorInfo.textContent = 'Minimalny wzrost to 50, a maksymalny 250'
 	} else if (weight.value < 20 || weight.value > 200) {
 		errorInfo.textContent = 'Minimalna waga to 20, a maksymalna 200'
-	} else if (hours.value > 100) {
+	} else if (hours.value === '' && hours.value > 100) {
 		errorInfo.textContent = 'Maksymalna liczba godzin to 100'
 	}else {
 		errorInfo.textContent = ''
