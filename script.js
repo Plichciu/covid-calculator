@@ -183,12 +183,16 @@ const showError = () => {
 
 	if(age.value < 18 || age.value >=120) {
 		errorInfo.textContent = 'Minimalny wiek to 18, a maksymalny 120'
+		age.classList.add('active')
 	} else if (height.value < 50 || height.value > 250) {
 		errorInfo.textContent = 'Minimalny wzrost to 50, a maksymalny 250'
+		height.classList.add('active')
 	} else if (weight.value < 20 || weight.value > 200) {
 		errorInfo.textContent = 'Minimalna waga to 20, a maksymalna 200'
+		weight.classList.add('active')
 	} else if (hours.value === '' && hours.value > 100) {
 		errorInfo.textContent = 'Maksymalna liczba godzin to 100'
+		hours.classList.add('active')
 	}else {
 		errorInfo.textContent = ''
 	}
