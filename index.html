@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator wystąpienia Covid</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="main">
+        <h1 class="title">Kalkulator wystąpienia ciężkiego przebiegu covid</h1>
+        <p class="subTitle">Sprawdź jakie masz szanse na przeżycie</p>
+
+        <form action="">
+
+            <div class="box">
+                <label class="short" for="">Wiek:</label>
+                <input  type="number" min="18" max="120" class="short-input age ">
+            </div>
+
+            <div class="box">
+                <label class="short" for="">Wzrost:</label>
+                <input type="number" max="250" class="short-input height">
+            </div>
+
+            <div class="box">
+                <label class="short" for="">Masa ciała:</label>
+                <input type="number" class="short-input weight">
+            </div>
+
+            <div class="box">
+                <label class="short" for="">Liczba godzin aktywności fizycznej w ciągu tygodnia</label>
+                <input type="number" max="100" class="short-input hours">
+            </div>
+
+            <div class="sexBox">
+                <label for="">Płeć</label>
+                <div class="sex-answers">
+                    <input type="radio" name="sex" class="gender man "> <p>Mężczyzna</p>
+                    <input type="radio" name="sex" class="gender woman"> <p>Kobieta</p>
+                    <input type="radio" name="sex" class="gender homo"> <p>Homoś</p>
+                </div>
+            </div>
+
+            <div class="vac">
+                <label for="">Czy jesteś zaszczepiony?</label>
+                <div class="vac-answers">
+                    <input onclick="onCheck()" type="radio" name="yes-no" class="yes"> <p>Tak</p>
+                    <input onclick="onCheck()" type="radio" name="yes-no" class="no"> <p>Nie</p>
+                </div>
+            </div>
+
+            <div class="addons">
+                <label for="">Dodatkowej opcje:</label>
+                <div class="addons-answers">
+                    <div class="add-answer"> <input type="checkbox" class="braun" value="Braun" onclick="unCheck()"> 
+                        <p>Głosuję na Grzegorza Brauna </p>
+                    </div>
+                    <div class="add-answer"> <input type="checkbox" class="socialist" value="Socialist" onclick="unCheck()"> 
+                        <p>Jestem Socjalistą</p>
+                    </div>
+                    <div class="add-answer"> <input type="checkbox" class="corona" value="corona" onclick="unCheck()"> 
+                        <p>Jestem korona-ofiarą</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <button class="checkBtn">Sprawdź</button>
+
+            <img class="result-img" src="" alt="">
+            <p class="result"></p>
+            <p class="error"></p>
+
+        </form>
+
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
