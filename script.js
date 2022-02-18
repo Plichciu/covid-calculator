@@ -159,9 +159,10 @@ const walidateForm = e => {
     showError()
 	
 
-	if (errors === 0  && age.value >= 18 && age.value <= 120 && height.value >= 50 && height.value < 250 && weight.value >= 20 && weight.value <= 200 && hours.value <= 100) {
+	if (errors === 0  && age.value >= 18 && age.value <= 120 && height.value >= 50 && height.value <= 250 && weight.value >= 20 && weight.value <= 200 && hours.value <= 100) {
         countResult()
         checkBtn.innerHTML = 'Reset'
+		checkBtn.classList.add('activeB')
 	} 
 
 	
